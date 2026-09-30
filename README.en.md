@@ -1,6 +1,22 @@
 # Codely Unity MCP
 
-An MCP adapter for the Codely Bridge in Unity / Tuanjie Editor. It forwards MCP stdio messages to the local Bridge TCP service. It has no third-party Node.js dependencies and does not include the editor plugin.
+**Connect AI agents that support MCP stdio to the Codely Bridge in Tuanjie Editor, so they can inspect project state and perform editor operations through a common tool interface.**
+
+This project exposes Tuanjie Bridge capabilities as an MCP server for different agents and AI clients. Clients that support configuring local MCP stdio servers can use the adapter without implementing their own Bridge connection code. Compatibility depends on each client's MCP support.
+
+Connected agents can inspect editor and scene state, manage GameObjects and assets, execute C# snippets, read Console messages, and invoke screenshot tools to assist development, automate editor tasks, and investigate problems. Users must install and start Codely Bridge in their own projects; this project provides the connection between the agent and that Bridge.
+
+```text
+MCP-capable agent / AI client
+            ↓ MCP stdio
+      Codely Unity MCP (this project)
+            ↓ local TCP
+      Codely Bridge in the Tuanjie project
+            ↓
+         Tuanjie Editor
+```
+
+The adapter has no third-party Node.js dependencies and does not include the editor plugin. Regular Unity compatibility has not been verified; requirements and the validation scope are described below.
 
 ## Requirements
 

@@ -1,6 +1,22 @@
 # Codely Unity MCP
 
-面向 Unity / 团结编辑器的 Codely Bridge MCP 适配器，通过 MCP stdio 转发到本机 Bridge TCP 服务。它不包含编辑器插件，也不需要第三方 Node.js 依赖。
+**让支持 MCP stdio 的 AI Agent 通过统一的工具接口连接团结编辑器中的 Codely Bridge，读取工程状态并执行编辑器操作。**
+
+本项目把团结 Bridge 的能力封装成 MCP 服务，方便接入不同的 Agent 和 AI 客户端。只要客户端支持配置本地 MCP stdio 服务，就可以使用本适配器，无需为每个 Agent 单独编写 Bridge 连接代码。具体兼容性以客户端的 MCP 支持情况为准。
+
+连接后，Agent 可以查询编辑器和场景状态、管理 GameObject 与资产、执行 C# 片段、读取 Console，以及调用截图等工具，用于辅助开发、自动化编辑和问题排查。使用者仍需在自己的工程中安装并启动 Codely Bridge；本项目提供 Agent 到 Bridge 的连接入口。
+
+```text
+支持 MCP 的 Agent / AI 客户端
+            ↓ MCP stdio
+      Codely Unity MCP（本项目）
+            ↓ 本机 TCP
+      团结工程中的 Codely Bridge
+            ↓
+         团结编辑器
+```
+
+适配器不包含编辑器插件，也不需要第三方 Node.js 依赖。普通 Unity 的兼容性尚未验证，具体要求和验证范围见下文。
 
 ## 使用前准备
 
