@@ -99,7 +99,21 @@ Doctor 只读取工程目录和握手文件，并尝试 TCP 握手后立即断�
 
 `bridge_status`、`send_raw`、`execute_csharp`、`manage_gameobject`、`manage_scene`、`manage_asset`、`manage_editor`、`manage_gameview`、`execute_menu_item`、`read_console`、`screenshot`、`manage_job`。
 
-通用编辑器操作指引和 C# 片段见 [`skills/codely-unity/SKILL.md`](skills/codely-unity/SKILL.md)。MCP 标准输出仅发送 JSON-RPC 消息，任何诊断信息写入标准错误。
+MCP 标准输出仅发送 JSON-RPC 消息，任何诊断信息写入标准错误。
+
+## 配套 Agent skill
+
+本项目附带 [`codely-unity` skill](skills/codely-unity/SKILL.md)，用于指导 Agent 正确调用 Bridge 工具，内容包括连接和编辑器状态检查、Play Mode 写保护、Console 验证流程以及 C# 执行约束。[C# 示例](skills/codely-unity/references/csharp-examples.md)也随 skill 提供。它是通用版本，不包含特定游戏工程的路径或项目记忆。
+
+skill 已包含在 GitHub 仓库、Release ZIP 和 npm 包的 `skills/codely-unity/` 目录中。**配置 MCP 或通过 `npx` 启动服务不会自动安装 skill**；MCP 提供工具接口，skill 提供 Agent 使用这些工具的操作指引。
+
+安装方式：
+
+1. 下载 Release ZIP 或克隆本仓库，取得 `skills/codely-unity/`。
+2. 将整个 `codely-unity` 文件夹复制到所用 Agent 支持的技能目录，保留 `SKILL.md` 和 `references/` 的相对结构。
+3. 按该 Agent 的技能加载方式重新加载，并在操作编辑器前使用此 skill。
+
+技能目录和加载方式因 Agent 而异。若客户端不支持 skills，也可以让 Agent 在调用 MCP 工具前读取 `SKILL.md`，需要 C# 示例时再读取引用文档。skill 是推荐的配套指引，MCP 服务本身不依赖安装它。
 
 ## 开发检查
 

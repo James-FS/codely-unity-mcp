@@ -91,7 +91,21 @@ The adapter checks the configured port before each request and reconnects if the
 
 `bridge_status`, `send_raw`, `execute_csharp`, `manage_gameobject`, `manage_scene`, `manage_asset`, `manage_editor`, `manage_gameview`, `execute_menu_item`, `read_console`, `screenshot`, and `manage_job`.
 
-See [`skills/codely-unity/SKILL.md`](skills/codely-unity/SKILL.md) for a general operation guide and C# examples. Standard output is reserved for JSON-RPC messages; diagnostics go to standard error.
+Standard output is reserved for JSON-RPC messages; diagnostics go to standard error.
+
+## Companion agent skill
+
+The included [`codely-unity` skill](skills/codely-unity/SKILL.md) guides agents through Bridge and editor state checks, Play Mode write protection, Console verification, and C# execution constraints. It includes [C# examples](skills/codely-unity/references/csharp-examples.md) and contains no game-specific paths or project memory.
+
+The skill is included in the GitHub repository, Release ZIP, and npm package under `skills/codely-unity/`. **Configuring MCP or starting the server with `npx` does not automatically install the skill.** MCP provides the tool interface; the skill provides instructions for using those tools.
+
+To install:
+
+1. Download the Release ZIP or clone this repository to obtain `skills/codely-unity/`.
+2. Copy the entire `codely-unity` folder into your agent's supported skills directory, preserving `SKILL.md` and the `references/` folder structure.
+3. Reload skills using your agent's loading procedure and use this skill before operating the editor.
+
+Skill locations and loading procedures vary by agent. If your client does not support skills, ask the agent to read `SKILL.md` before calling MCP tools and consult the referenced C# examples as needed. The skill is recommended guidance; the MCP server does not require it to be installed.
 
 ## License
 
