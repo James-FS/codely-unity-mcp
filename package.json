@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "node ./scripts/smoke.mjs",
-    "doctor": "node ./scripts/doctor.mjs"
+    "doctor": "node ./scripts/doctor.mjs",
+    "test:integration": "node ./scripts/integration.mjs"
   },
   "type": "module",
   "bin": {
@@ -23,11 +24,12 @@
   "files": [
     "server.mjs",
     "scripts/doctor.mjs",
+    "scripts/smoke.mjs",
+    "scripts/integration.mjs",
     "README.md",
     "README.en.md",
     "LICENSE",
     "CHANGELOG.md",
-    "examples/",
     "examples/",
     "skills/"
   ]

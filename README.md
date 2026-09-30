@@ -8,7 +8,7 @@
 - 在目标工程中安装 Codely Bridge，并保持 Unity / 团结编辑器打开且 Bridge 已连接。
 - 目标工程需要含 `Assets` 目录。Bridge 的安装来源及再分发许可尚未核实；本项目不打包 Bridge。
 
-本适配器以团结工程搭配 Bridge 1.0.81 的现有环境为开发参考；此分发版本目前通过模拟 Bridge 的协议测试，尚未在真实编辑器中完成端到端连接验证。普通 Unity 及其他 Bridge 版本尚未验证。
+此版本已在团结工程与 Bridge 1.0.81 上通过只读端到端验证（bridge_status、manage_editor get_state），并通过模拟 Bridge 的协议测试。验证时编辑器处于 Edit Mode，未在 Play、编译或更新中；普通 Unity 及其他 Bridge 版本尚未验证。
 
 ## 下载运行
 
@@ -71,7 +71,11 @@ npm test
 node --check .\server.mjs
 ```
 
-冒烟检查不需要运行 Unity。
+冒烟检查不需要运行 Unity。要对已打开并连接 Bridge 的工程执行只读集成检查：
+
+```powershell
+npm run test:integration -- --project "D:\MyUnityProject"
+```
 
 ## 许可
 

@@ -8,7 +8,7 @@ An MCP adapter for the Codely Bridge in Unity / Tuanjie Editor. It forwards MCP 
 - Install Codely Bridge in the target project, then keep the editor open and Bridge connected.
 - The target project must contain an `Assets` directory. The Bridge's official distribution channel and redistribution terms have not been verified; this repository does not bundle it.
 
-Development was based on an existing Tuanjie project using Bridge 1.0.81. This distributable version has protocol tests against a mock Bridge, but has not yet completed an end-to-end connection test in a real editor. Regular Unity and other Bridge versions have not been verified.
+This version passed a read-only end-to-end check (bridge_status and manage_editor get_state) with a Tuanjie project and Bridge 1.0.81, as well as protocol tests against a mock Bridge. During the real-editor check, the editor was in Edit Mode and was not playing, compiling, or updating. Regular Unity and other Bridge versions have not been verified.
 
 ## Download and configure
 
@@ -59,3 +59,5 @@ See [`skills/codely-unity/SKILL.md`](skills/codely-unity/SKILL.md) for a general
 ## License
 
 The adapter code in this repository is released under the MIT License; see [`LICENSE`](LICENSE). Codely Bridge is a separate third-party editor component. Its official distribution channel and redistribution terms have not been verified, so it is not bundled here.
+
+For a read-only integration check against an open editor, run `npm run test:integration -- --project "D:\MyUnityProject"`.
