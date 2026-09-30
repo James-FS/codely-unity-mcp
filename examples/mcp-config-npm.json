@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "codely-unity": {
+      "command": "npx",
+      "args": ["-y", "codely-unity-mcp@1.0.0", "--project", "D:/MyUnityProject"]
+    }
+  }
+}

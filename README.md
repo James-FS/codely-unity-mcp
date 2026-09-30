@@ -10,6 +10,27 @@
 
 此版本已在团结工程与 Bridge 1.0.81 上通过只读端到端验证（bridge_status、manage_editor get_state），并通过模拟 Bridge 的协议测试。验证时编辑器处于 Edit Mode，未在 Play、编译或更新中；普通 Unity 及其他 Bridge 版本尚未验证。
 
+## 通过 npm 运行
+
+安装 Node.js 后，可在 MCP 客户端中使用以下配置，`npx` 会自动下载固定版本：
+
+```json
+{
+  "mcpServers": {
+    "codely-unity": {
+      "command": "npx",
+      "args": ["-y", "codely-unity-mcp@1.0.0", "--project", "D:/MyUnityProject"]
+    }
+  }
+}
+```
+
+将工程路径替换为自己的目录。若 Windows 客户端无法找到 `npx`，可尝试 `npx.cmd` 或配置其绝对路径。连接诊断命令：
+
+```powershell
+npx -y --package=codely-unity-mcp@1.0.0 codely-unity-doctor --project "D:\MyUnityProject"
+```
+
 ## 下载运行
 
 从 GitHub Releases 下载 ZIP 并解压。确认工程内存在 `Temp/.com-unity-codely.json` 或根目录下的 `.com-unity-codely.json`，然后配置 MCP 客户端：

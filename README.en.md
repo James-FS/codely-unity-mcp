@@ -10,6 +10,27 @@ An MCP adapter for the Codely Bridge in Unity / Tuanjie Editor. It forwards MCP 
 
 This version passed a read-only end-to-end check (bridge_status and manage_editor get_state) with a Tuanjie project and Bridge 1.0.81, as well as protocol tests against a mock Bridge. During the real-editor check, the editor was in Edit Mode and was not playing, compiling, or updating. Regular Unity and other Bridge versions have not been verified.
 
+## Run with npm
+
+With Node.js installed, configure your MCP client as follows. `npx` downloads the pinned version automatically:
+
+```json
+{
+  "mcpServers": {
+    "codely-unity": {
+      "command": "npx",
+      "args": ["-y", "codely-unity-mcp@1.0.0", "--project", "D:/MyUnityProject"]
+    }
+  }
+}
+```
+
+Replace the project path with your own. If a Windows client cannot locate `npx`, try `npx.cmd` or its absolute path. Diagnose the connection with:
+
+```powershell
+npx -y --package=codely-unity-mcp@1.0.0 codely-unity-doctor --project "D:\MyUnityProject"
+```
+
 ## Download and configure
 
 Download and extract the ZIP from GitHub Releases. Configure your MCP client with the absolute paths to the server and project:

@@ -5,7 +5,7 @@
   "homepage": "https://github.com/James-FS/codely-unity-mcp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/James-FS/codely-unity-mcp.git"
+    "url": "git+https://github.com/James-FS/codely-unity-mcp.git"
   },
   "scripts": {
     "test": "node ./scripts/smoke.mjs",
@@ -14,8 +14,8 @@
   },
   "type": "module",
   "bin": {
-    "codely-unity-mcp": "./server.mjs",
-    "codely-unity-doctor": "./scripts/doctor.mjs"
+    "codely-unity-mcp": "server.mjs",
+    "codely-unity-doctor": "scripts/doctor.mjs"
   },
   "engines": {
     "node": ">=20"
