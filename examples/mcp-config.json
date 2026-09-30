@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "codely-unity": {
+      "command": "node",
+      "args": [
+        "C:/Tools/codely-unity-mcp/server.mjs",
+        "--project",
+        "D:/MyUnityProject"
+      ],
+      "env": {
+        "CODELY_UNITY_HOST": "127.0.0.1"
+      }
+    }
+  }
+}

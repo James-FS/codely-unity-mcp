@@ -1,0 +1,34 @@
+{
+  "name": "codely-unity-mcp",
+  "version": "1.0.0",
+  "description": "MCP adapter for the Codely Unity/Tuanjie editor bridge",
+  "homepage": "https://github.com/James-FS/codely-unity-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/James-FS/codely-unity-mcp.git"
+  },
+  "scripts": {
+    "test": "node ./scripts/smoke.mjs",
+    "doctor": "node ./scripts/doctor.mjs"
+  },
+  "type": "module",
+  "bin": {
+    "codely-unity-mcp": "./server.mjs",
+    "codely-unity-doctor": "./scripts/doctor.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "files": [
+    "server.mjs",
+    "scripts/doctor.mjs",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "examples/",
+    "examples/",
+    "skills/"
+  ]
+}
