@@ -49,3 +49,7 @@ Use this guide when operating an editor through the Codely Unity MCP. It contain
 ## Examples
 
 See [C# examples](references/csharp-examples.md) for short, project-independent snippets.
+
+## Bridge streaming warnings
+
+For `SendDataChannelMessage REJECTED` or `dataChannel=null`, read [Native streaming troubleshooting](references/native-streaming.md). Distinguish browser streaming from MCP/TCP command transport, check actual log evidence, and choose a remedy based on whether browser streaming is needed. The reference includes the verified Polarity repair and its limitations.

@@ -95,6 +95,12 @@ Doctor 只读取工程目录和握手文件，并尝试 TCP 握手后立即断�
 
 适配器每次发出命令前检查端口；编辑器重启并变更端口后，会重新连接。
 
+## Bridge 协议约定
+
+连接后先读取 `WELCOME ... FRAMING=1` 握手行；后续消息使用 8 字节大端长度头和 UTF-8 JSON 帧。不要在握手后发送 `CLIENT_VERSION=` 明文行，Bridge 3.x 会因此重置连接。
+
+仓库根目录的 `probe.mjs` 是从本机服务迁入的手动 TCP 探测脚本，端口固定为 `5710`；只有 Bridge 实际监听该端口时才适用。通用连接诊断请使用 `scripts/doctor.mjs --project <工程目录>`。
+
 ## MCP 工具
 
 `bridge_status`、`send_raw`、`execute_csharp`、`manage_gameobject`、`manage_scene`、`manage_asset`、`manage_editor`、`manage_gameview`、`execute_menu_item`、`read_console`、`screenshot`、`manage_job`。
