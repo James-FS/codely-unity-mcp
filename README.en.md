@@ -1,5 +1,7 @@
 # Codely Unity MCP
 
+[中文介绍与图解](README.md) · [npm](https://www.npmjs.com/package/codely-unity-mcp) · [Latest release](https://github.com/James-FS/codely-unity-mcp/releases/latest)
+
 **Connect AI agents that support MCP stdio to the Codely Bridge in Tuanjie Editor, so they can inspect project state and perform editor operations through a common tool interface.**
 
 This project exposes Tuanjie Bridge capabilities as an MCP server for different agents and AI clients. Clients that support configuring local MCP stdio servers can use the adapter without implementing their own Bridge connection code. Compatibility depends on each client's MCP support.
@@ -35,7 +37,7 @@ With Node.js installed, configure your MCP client as follows. `npx` downloads th
   "mcpServers": {
     "codely-unity": {
       "command": "npx",
-      "args": ["-y", "codely-unity-mcp@1.0.0", "--project", "D:/MyUnityProject"]
+      "args": ["-y", "codely-unity-mcp@1.0.1", "--project", "D:/MyUnityProject"]
     }
   }
 }
@@ -44,7 +46,7 @@ With Node.js installed, configure your MCP client as follows. `npx` downloads th
 Replace the project path with your own. If a Windows client cannot locate `npx`, try `npx.cmd` or its absolute path. Diagnose the connection with:
 
 ```powershell
-npx -y --package=codely-unity-mcp@1.0.0 codely-unity-doctor --project "D:\MyUnityProject"
+npx -y --package=codely-unity-mcp@1.0.1 codely-unity-doctor --project "D:\MyUnityProject"
 ```
 
 ## Download and configure
