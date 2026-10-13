@@ -1,6 +1,6 @@
 # Codely Unity MCP
 
-[中文介绍与图解](README.md) · [npm](https://www.npmjs.com/package/codely-unity-mcp) · [Latest release](https://github.com/James-FS/codely-unity-mcp/releases/latest)
+[中文介绍与图解](https://github.com/James-FS/codely-unity-mcp/blob/main/README.md) · [npm](https://www.npmjs.com/package/codely-unity-mcp) · [Latest release](https://github.com/James-FS/codely-unity-mcp/releases/latest)
 
 **Connect AI agents that support MCP stdio to the Codely Bridge in Tuanjie Editor, so they can inspect project state and perform editor operations through a common tool interface.**
 
@@ -37,7 +37,7 @@ With Node.js installed, configure your MCP client as follows. `npx` downloads th
   "mcpServers": {
     "codely-unity": {
       "command": "npx",
-      "args": ["-y", "codely-unity-mcp@1.0.1", "--project", "D:/MyUnityProject"]
+      "args": ["-y", "codely-unity-mcp@1.0.2", "--project", "D:/MyUnityProject"]
     }
   }
 }
@@ -46,7 +46,7 @@ With Node.js installed, configure your MCP client as follows. `npx` downloads th
 Replace the project path with your own. If a Windows client cannot locate `npx`, try `npx.cmd` or its absolute path. Diagnose the connection with:
 
 ```powershell
-npx -y --package=codely-unity-mcp@1.0.1 codely-unity-doctor --project "D:\MyUnityProject"
+npx -y --package=codely-unity-mcp@1.0.2 codely-unity-doctor --project "D:\MyUnityProject"
 ```
 
 ## Download and configure
@@ -97,7 +97,7 @@ Standard output is reserved for JSON-RPC messages; diagnostics go to standard er
 
 ## Companion agent skill
 
-The included [`codely-unity` skill](skills/codely-unity/SKILL.md) guides agents through Bridge and editor state checks, Play Mode write protection, Console verification, and C# execution constraints. It includes [C# examples](skills/codely-unity/references/csharp-examples.md) and contains no game-specific paths or project memory.
+The included [`codely-unity` skill](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/SKILL.md) guides agents through Bridge and editor state checks, Play Mode write protection, Console verification, and C# execution constraints. It includes [C# examples](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/references/csharp-examples.md) and contains no game-specific paths or project memory.
 
 The skill is included in the GitHub repository, Release ZIP, and npm package under `skills/codely-unity/`. **Configuring MCP or starting the server with `npx` does not automatically install the skill.** MCP provides the tool interface; the skill provides instructions for using those tools.
 
@@ -111,6 +111,6 @@ Skill locations and loading procedures vary by agent. If your client does not su
 
 ## License
 
-The adapter code in this repository is released under the MIT License; see [`LICENSE`](LICENSE). Codely Bridge is a separate third-party editor component. Its official distribution channel and redistribution terms have not been verified, so it is not bundled here.
+The adapter code in this repository is released under the MIT License; see [`LICENSE`](https://github.com/James-FS/codely-unity-mcp/blob/main/LICENSE). Codely Bridge is a separate third-party editor component. Its official distribution channel and redistribution terms have not been verified, so it is not bundled here.
 
 For a read-only integration check against an open editor, run `npm run test:integration -- --project "D:\MyUnityProject"`.

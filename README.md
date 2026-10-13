@@ -2,7 +2,7 @@
 
 **让 AI Agent 直接参与团结编辑器里的游戏开发。**
 
-[English](README.en.md) · [npm](https://www.npmjs.com/package/codely-unity-mcp) · [下载最新版](https://github.com/James-FS/codely-unity-mcp/releases/latest) · [反馈问题](https://github.com/James-FS/codely-unity-mcp/issues)
+[English](https://github.com/James-FS/codely-unity-mcp/blob/main/README.en.md) · [npm](https://www.npmjs.com/package/codely-unity-mcp) · [下载最新版](https://github.com/James-FS/codely-unity-mcp/releases/latest) · [反馈问题](https://github.com/James-FS/codely-unity-mcp/issues)
 
 游戏开发不只是写代码。创建 GameObject、调整组件参数、管理场景和资源、查看 Console，都需要和编辑器打交道。
 
@@ -79,7 +79,7 @@ MCP 配置格式、技能目录和重新加载方式因客户端而异。需要�
   "mcpServers": {
     "codely-unity": {
       "command": "npx",
-      "args": ["-y", "codely-unity-mcp@1.0.1", "--project", "D:/MyUnityProject"]
+      "args": ["-y", "codely-unity-mcp@1.0.2", "--project", "D:/MyUnityProject"]
     }
   }
 }
@@ -90,7 +90,7 @@ MCP 配置格式、技能目录和重新加载方式因客户端而异。需要�
 用 Doctor 检查连接：
 
 ```powershell
-npx -y --package=codely-unity-mcp@1.0.1 codely-unity-doctor --project "D:\MyUnityProject"
+npx -y --package=codely-unity-mcp@1.0.2 codely-unity-doctor --project "D:\MyUnityProject"
 ```
 
 Doctor 只读取工程目录和握手文件，尝试 TCP 握手后立即断开，不向编辑器发送操作命令。通过后，让 Agent 调用 `bridge_status`，再调用 `manage_editor action=get_state` 确认目标工程和编辑器状态。
@@ -127,9 +127,9 @@ node .\scripts\doctor.mjs --project "D:\MyUnityProject"
 
 ## 配套 Agent Skill
 
-[MCP 工具](#能做什么)负责提供操作能力，[`codely-unity` Skill](skills/codely-unity/SKILL.md)负责指导 Agent 使用这些工具：操作前检查连接、Play 和编译状态，遵守写保护，操作后读取 Console 并验证结果。
+[MCP 工具](#能做什么)负责提供操作能力，[`codely-unity` Skill](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/SKILL.md)负责指导 Agent 使用这些工具：操作前检查连接、Play 和编译状态，遵守写保护，操作后读取 Console 并验证结果。
 
-Skill 包含 [C# 示例](skills/codely-unity/references/csharp-examples.md)和[原生串流 / DataChannel 排障](skills/codely-unity/references/native-streaming.md)。它是通用指引，项目专用路径和玩法约定应放在各自工程的说明中。
+Skill 包含 [C# 示例](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/references/csharp-examples.md)和[原生串流 / DataChannel 排障](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/references/native-streaming.md)。它是通用指引，项目专用路径和玩法约定应放在各自工程的说明中。
 
 **通过 npx 启动 MCP 不会自动安装 Skill。** GitHub 仓库、Release ZIP 和 npm 包均包含 `skills/codely-unity/`：
 
@@ -154,7 +154,7 @@ Skill 包含 [C# 示例](skills/codely-unity/references/csharp-examples.md)和[�
 | 找不到工程或握手文件 | 路径是否指向包含 `Assets` 的工程根目录，Bridge 是否安装并启动 |
 | TCP 连接失败 | 编辑器是否打开；先运行 Doctor 检查握手 |
 | Play 中写入被拒 | 读取编辑器状态，需要修改场景和资产时先停止 Play |
-| `SendDataChannelMessage REJECTED` | 查看[串流排障参考](skills/codely-unity/references/native-streaming.md)，区分浏览器串流与 MCP/TCP 操作 |
+| `SendDataChannelMessage REJECTED` | 查看[串流排障参考](https://github.com/James-FS/codely-unity-mcp/blob/main/skills/codely-unity/references/native-streaming.md)，区分浏览器串流与 MCP/TCP 操作 |
 
 <details>
 <summary>Bridge 协议与手动探测</summary>
@@ -190,4 +190,4 @@ npm run test:integration -- --project "D:\MyUnityProject"
 
 ## 许可
 
-本仓库的适配器代码按 [MIT 许可证](LICENSE)发布。Codely Bridge 是独立的编辑器组件，不随本项目打包；其安装与使用应遵循提供方说明和许可。本项目不代表团结或 Codely 官方。
+本仓库的适配器代码按 [MIT 许可证](https://github.com/James-FS/codely-unity-mcp/blob/main/LICENSE)发布。Codely Bridge 是独立的编辑器组件，不随本项目打包；其安装与使用应遵循提供方说明和许可。本项目不代表团结或 Codely 官方。

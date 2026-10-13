@@ -1,6 +1,6 @@
 {
   "name": "codely-unity-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP adapter for the Codely Unity/Tuanjie editor bridge",
   "homepage": "https://github.com/James-FS/codely-unity-mcp",
   "repository": {
